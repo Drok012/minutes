@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Minutes Game</title>
+  </head>
+  <body>
+
+<form class="Minute" id="newBet" action="/" method="post">
+  <label for="users"></label>
+
+    <select name="Minute" id="users" required>
+      <option>אבי</option>
+      <option>בוכניק</option>
+      <option>חדרי</option>
+      <option>כפיר</option>
+      <option>מוטי</option>
+      <option>לרנר</option>
+      <option>עידן</option>
+      <option>פבל</option>
+      <option>קורמן</option>
+      <option>רון</option>
+      <option>שי</option>
+      <option>שרפהרץ</option>
+      <option>תמיר</option>
+    </select>
+    <label for="MinuteBet">דקה</label>
+  <input type="text" id="MinuteBet" name="MinuteBet" required>
+
+<button type="submit" name="button">Add</button> <br>
+
+<p>אבי -
+   , בוכניק -
+       , חדרי -
+   , כפיר -
+   , מוטי -
+   , לרנר -
+   , עידן -
+   , פבל -
+   , קורמן -
+   , רון -
+   , שי -
+   , שרפהרץ - ,
+    תמיר - ב
+  </p>
+
+</form> <br>
+<!--
+<form action="/delete" method="post">
+  <select name="DeleteMinute" id="users" value="<%=minute._id%>">
+    <% minute.forEach(function(bet){ %>
+    <option><%= bet.name %> <%= bet.minuteBet %></option>
+    <% }) %>
+  </select>
+
+<button type="submit" name="button">Delete</button>
+
+-->
+
+  </form>
+
+    <table  border= 1px>
+<td colspan=5 style="text-align: center"> <h1> מחצית ראשונה</h1></td>
+<tr>
+  <% for (let i=1; i < 121; i++) { %>
+  <th style="vertical-align: top">
+    <% let actualMinute = i; %>
+    <% let injuryTime = 0; %>
+    <% if (i >105) { %>
+    <%  injuryTime = i-105 %>
+    <%  actualMinute = "90+" + injuryTime} %>
+
+    <% if (60 < i & i < 106) { %>
+        <%  actualMinute = i-15} %>
+
+    <% if (45 < i & i < 61) { %>
+        <%  injuryTime = i-45 %>
+        <%  actualMinute = "45+" + injuryTime %>
+
+    <%  } %>
+  <h2 style="color: red">    <%= actualMinute %> </h2><br>
+
+    <% minute.forEach(function(bet){ %>
+      <div class="Minute">
+
+        <% if (actualMinute == bet.minuteBet) { %>
+      <p> <%= bet.name %> </p>
+      <% } %>
+      <% }) %>
+
+<!--<form class="Minute" action="/" method="post">
+      <label for="users"></label>
+
+        <select name="Minute" id="users">
+          <option>עידן</option>
+          <option>רון</option>
+          <option>שי</option>
+          <option>קורמן</option>
+          <option>לרנר</option>
+          <option>אבי</option>
+        </select>
+        <button type="submit" name="button">Add</button>
+</form>
+-->
+</th>
+<% if (i % 5 == 0) { %>
+</tr>
+<tr>
+  <% } %>
+<% if (i==60) { %>
+</tr>
+<td colspan=5 style="text-align:center"> <h1>מחצית שניה </h1></td>
+<tr>
+  <% } %>
+ <% } %>
+
+    <!--  <tr>
+      <% for (var i=1; i<46; i++) { %>
+        <th> <%= i %> <br>
+
+
+          <form class="" action="/" method="post">
+            <label for="users"></label>
+
+  <select name="newPlayer" id="users">
+    <option>Idan</option>
+    <option>Ron</option>
+    <option>Shay</option>
+    <option>Korman</option>
+  </select>
+
+          <button type="submit" name="button">Add</button>
+        </form>
+       </th>
+      <% if (i%5==0) { %>
+        </tr>
+        <tr>
+      <% }} %>
+    </tr> -->
+
+
+<!--      <tr>
+      <% for (var i=46; i<91; i++) { %>
+        <th> <%= i %> </th>
+      <% if (i%5==0) { %>
+        </tr>
+        <tr>
+      <% }} %>
+    </tr>  -->
+
+    </table>
+<!--
+    <form class="" action="/" method="post">
+      <input type="text" name="newPlayer">
+
+      <button type="submit" name="button">Add</button>
+    </form>
+  -->
+  </body>
+</html>
