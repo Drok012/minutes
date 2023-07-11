@@ -1,5 +1,7 @@
 //jshint esversion:6
 
+//token in github: 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
+
 const express = require("express");
 const BodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -12,7 +14,7 @@ app.set('view engine', 'ejs');
 app.use(BodyParser.urlencoded({extended: true}));
 //app.use(express.ststic("public"));
 
-mongoose.connect("mongodb://localhost:27017/minuteBetDB");
+mongoose.connect("mongodb+srv://drok012:Tbhdtui`12@minutegame.v4wejeh.mongodb.net/minuteBetDB");
 
 const betsSchema1 = {
   name: String,
@@ -114,6 +116,6 @@ res.redirect("/");
 //  console.log(req.body.DeleteMinute);
 //});
 
-app.listen(3000, function(){
+app.listen(5000, function(){
   console.log("server started on port 3000");
 });
