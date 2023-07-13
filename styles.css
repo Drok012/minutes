@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+}
+
+.user{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.אבי{
+    color: blue;
+}
