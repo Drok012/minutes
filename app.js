@@ -46,7 +46,14 @@ Bet.find({}, function(err, foundBets){
   } else {
     res.render("minutes",{
       minute: foundBets,
-      player0: player[0]
+      player0: player[0],
+      player1: player[1],
+      player2: player[2],
+      player3: player[3],
+      player4: player[4],
+      player5: player[5],
+      player6: player[6],
+      player7: player[7]
     });
   }
 
