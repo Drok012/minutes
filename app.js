@@ -45,7 +45,7 @@ Bet.find({}, function(err, foundBets){
     });
   } else {
     res.render("minutes",{
-      minute: foundBets
+      minute: foundBets,
       player0: player[0]
     });
   }
