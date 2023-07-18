@@ -53,7 +53,12 @@ Bet.find({}, function(err, foundBets){
       player4: player[4],
       player5: player[5],
       player6: player[6],
-      player7: player[7]
+      player7: player[7],
+      player8: player[8],
+      player9: player[9],
+      player10: player[10],
+      player11: player[11],
+      player12: player[12]
     });
   }
 
