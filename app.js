@@ -44,7 +44,10 @@ Bet.find({}, function(err, foundBets){
       res.redirect("/");
     });
   } else {
-    res.render("minutes",{minute: foundBets});
+    res.render("minutes",{
+      minute: foundBets
+      player0: player[0]
+    });
   }
 
 });
